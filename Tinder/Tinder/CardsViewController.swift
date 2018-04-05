@@ -22,54 +22,50 @@ class CardsViewController: UIViewController {
     }
     
     @IBAction func didPanGesture(_ sender: UIPanGestureRecognizer) {
-        let location = sender.location(in: cardImage)
-        let velocity = sender.velocity(in: cardImage)
         let translation = sender.translation(in: cardImage)
         
         if sender.state == .began {
             print("Gesture began")
+            cardInitialCenter = cardImage.center
+            
         } else if sender.state == .changed {
             print("Gesture is changing")
+            // using translation direction to rotate & translate
+            cardImage.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / 8) * (translation.x * 0.01))
+            cardImage.center.x = cardInitialCenter.x + translation.x
+            cardImage.center.y = cardInitialCenter.y + translation.y
+            
         } else if sender.state == .ended {
             print("Gesture ended")
-        }
-    
-        // For positive horizontal translation
-        if (velocity.x > 10) {
-            cardImage.transform = cardImage.transform.rotated(by: CGFloat(15 * M_PI / 180))
-            if sender.state == .ended {
-               cardImage.transform = CGAffineTransform.identity
-            }
+            self.cardImage.alpha = 0
             
-        } else {
-            // For negative horizontal translations
-            cardImage.transform = cardImage.transform.rotated(by: CGFloat(-15 * M_PI / 180))
-            if sender.state == .ended {
+            if (translation.x < 50) {
+                print("Swiped Left")
+                UIView.animate(withDuration: 0.0, delay: 0.0, options: .curveEaseInOut,
+                               animations: { self.cardImage.alpha = 1 },
+                               completion: { (Bool) in
+                                self.cardImage.removeFromSuperview()
+                })
+                
+            } else if (translation.x > 50) {
+                print("Swiped Right")
+                UIView.animate(withDuration: 0.0, delay: 0.0, options: .curveEaseInOut,
+                               animations: { self.cardImage.alpha = 1 },
+                               completion: { (Bool) in
+                                self.cardImage.removeFromSuperview()
+                })
+                
+            } else {
                 cardImage.transform = CGAffineTransform.identity
             }
         }
-        
-        if (translation.x > 50) {
-            
-        } else {
-            
-        }
-    }
-    
-    /*
-    UIView.animate(withDuration:0.4, animations: {
-        // This causes first view to fade in and second view to fade out
-        self.firstView.alpha = 1
-        self.secondView.alpha = 0
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- */
     
-
     /*
     // MARK: - Navigation
 

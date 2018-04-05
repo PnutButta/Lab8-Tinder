@@ -18,11 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-wR-Y1o">
-                                <rect key="frame" x="0.0" y="76" width="375" height="387"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="R37-Tj-dDX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="IGw-q6-Wkc"/>
+                                    <constraint firstAttribute="width" constant="375" id="yHw-Qh-ib5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="4Dn-ks-FVx">
+                                <rect key="frame" x="0.0" y="519" width="375" height="108"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-wR-Y1o">
+                                <rect key="frame" x="0.0" y="98" width="375" height="375"/>
                                 <color key="backgroundColor" red="1" green="0.22531029278508086" blue="0.23145421232059471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="0MF-VW-w1E"/>
+                                    <constraint firstAttribute="height" constant="375" id="dSG-YS-eG5"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="YXs-ng-ax4" appends="YES" id="zhO-NZ-3Bq"/>
                                 </connections>
@@ -30,6 +43,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="R37-Tj-dDX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M6b-N3-JcA"/>
+                            <constraint firstItem="Zdm-wR-Y1o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q1t-e1-ZAr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Dn-ks-FVx" secondAttribute="bottom" constant="40" id="U69-uq-78m"/>
+                            <constraint firstItem="4Dn-ks-FVx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ctK-Tc-mkc"/>
+                            <constraint firstAttribute="trailing" secondItem="Zdm-wR-Y1o" secondAttribute="trailing" id="jrP-dL-5ps"/>
+                            <constraint firstItem="4Dn-ks-FVx" firstAttribute="top" secondItem="Zdm-wR-Y1o" secondAttribute="bottom" constant="46" id="jwH-Ju-wy4"/>
+                            <constraint firstItem="R37-Tj-dDX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mWb-qJ-uJ5"/>
+                            <constraint firstItem="4Dn-ks-FVx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="opa-1l-ch6"/>
+                            <constraint firstItem="R37-Tj-dDX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rPn-mf-Ih5"/>
+                            <constraint firstItem="Zdm-wR-Y1o" firstAttribute="top" secondItem="R37-Tj-dDX" secondAttribute="bottom" constant="33" id="xjQ-FZ-Wrs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="YXs-ng-ax4" appends="YES" id="kZj-nn-JAH"/>
@@ -48,5 +73,53 @@
             </objects>
             <point key="canvasLocation" x="68" y="33.733133433283363"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="4Pt-FJ-Dg2">
+            <objects>
+                <viewController id="HUD-p3-DQG" customClass="ProfileViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tAb-qY-yBg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="jUD-Uf-fNl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="1AK-Nx-gkQ"/>
+                                    <constraint firstAttribute="height" constant="77" id="BIR-R0-Oum"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-LV-Mbt">
+                                <rect key="frame" x="0.0" y="97" width="375" height="375"/>
+                                <color key="backgroundColor" red="1" green="0.22531029280000001" blue="0.23145421229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="PFJ-Yg-cQ7"/>
+                                    <constraint firstAttribute="width" constant="375" id="ofI-7z-QzN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QAd-LV-Mbt" firstAttribute="trailing" secondItem="I0M-gP-h5i" secondAttribute="trailing" id="7hC-9o-Czu"/>
+                            <constraint firstItem="QAd-LV-Mbt" firstAttribute="top" secondItem="jUD-Uf-fNl" secondAttribute="bottom" constant="20" id="LP9-Fa-tQ3"/>
+                            <constraint firstItem="jUD-Uf-fNl" firstAttribute="leading" secondItem="I0M-gP-h5i" secondAttribute="leading" id="Ofx-pM-4Xk"/>
+                            <constraint firstItem="jUD-Uf-fNl" firstAttribute="top" secondItem="tAb-qY-yBg" secondAttribute="top" id="V8U-p8-e3A"/>
+                            <constraint firstItem="jUD-Uf-fNl" firstAttribute="trailing" secondItem="I0M-gP-h5i" secondAttribute="trailing" id="fGT-qT-Wyu"/>
+                            <constraint firstItem="QAd-LV-Mbt" firstAttribute="leading" secondItem="I0M-gP-h5i" secondAttribute="leading" id="wuE-df-ifg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I0M-gP-h5i"/>
+                    </view>
+                    <connections>
+                        <outlet property="profilePic" destination="QAd-LV-Mbt" id="jab-G0-TVR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7w-ue-wRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797.60000000000002" y="33.733133433283363"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
+    </resources>
 </document>
