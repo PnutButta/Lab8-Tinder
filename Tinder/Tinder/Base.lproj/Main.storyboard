@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="cardsView" id="BYZ-38-t0r" customClass="CardsViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="homeVC" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -38,6 +38,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="YXs-ng-ax4" appends="YES" id="zhO-NZ-3Bq"/>
+                                    <outletCollection property="gestureRecognizers" destination="bTp-EF-HeK" appends="YES" id="rwA-9F-6du"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -70,6 +71,11 @@
                         <action selector="didPanGesture:" destination="BYZ-38-t0r" id="Ldy-Rr-eS9"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="bTp-EF-HeK">
+                    <connections>
+                        <segue destination="HUD-p3-DQG" kind="presentation" identifier="toProfile" id="DRF-Xx-Ihr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="68" y="33.733133433283363"/>
         </scene>
@@ -83,13 +89,17 @@
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="jUD-Uf-fNl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1AK-Nx-gkQ"/>
                                     <constraint firstAttribute="height" constant="77" id="BIR-R0-Oum"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PRc-MG-FJj" appends="YES" id="UOR-rW-OnX"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-LV-Mbt">
-                                <rect key="frame" x="0.0" y="97" width="375" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-LV-Mbt">
+                                <rect key="frame" x="0.0" y="98" width="375" height="375"/>
                                 <color key="backgroundColor" red="1" green="0.22531029280000001" blue="0.23145421229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="PFJ-Yg-cQ7"/>
@@ -100,7 +110,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QAd-LV-Mbt" firstAttribute="trailing" secondItem="I0M-gP-h5i" secondAttribute="trailing" id="7hC-9o-Czu"/>
-                            <constraint firstItem="QAd-LV-Mbt" firstAttribute="top" secondItem="jUD-Uf-fNl" secondAttribute="bottom" constant="20" id="LP9-Fa-tQ3"/>
+                            <constraint firstItem="QAd-LV-Mbt" firstAttribute="top" secondItem="jUD-Uf-fNl" secondAttribute="bottom" constant="21" id="LP9-Fa-tQ3"/>
                             <constraint firstItem="jUD-Uf-fNl" firstAttribute="leading" secondItem="I0M-gP-h5i" secondAttribute="leading" id="Ofx-pM-4Xk"/>
                             <constraint firstItem="jUD-Uf-fNl" firstAttribute="top" secondItem="tAb-qY-yBg" secondAttribute="top" id="V8U-p8-e3A"/>
                             <constraint firstItem="jUD-Uf-fNl" firstAttribute="trailing" secondItem="I0M-gP-h5i" secondAttribute="trailing" id="fGT-qT-Wyu"/>
@@ -113,6 +123,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7w-ue-wRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PRc-MG-FJj">
+                    <connections>
+                        <action selector="backtoHome:" destination="HUD-p3-DQG" id="hdH-9G-3hZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="797.60000000000002" y="33.733133433283363"/>
         </scene>

@@ -61,6 +61,11 @@ class CardsViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationView = segue.destination as! ProfileViewController
+        destinationView.newImage = cardImage.image
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

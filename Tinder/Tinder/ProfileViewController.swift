@@ -11,8 +11,11 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePic: UIImageView!
+    var newImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        profilePic.image = newImage
 
         // Do any additional setup after loading the view.
     }
@@ -22,7 +25,11 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func backtoHome(_ sender: UITapGestureRecognizer) {
+        let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "cardsView") as? UIViewController
+        self.present(homeVc!, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
